@@ -9,6 +9,7 @@ import 'src/core/configurations/configurations.dart';
 import 'src/core/coordinator/app_coordinator.dart';
 import 'src/core/services/logger_service.dart';
 import 'src/dependency_injection/di.dart';
+import 'src/presentation/splash/pages/splash_screen.dart';
 import 'src/router/route_observer.dart';
 
 abstract class IAppDelegate {
@@ -30,7 +31,7 @@ class AppDelegate extends IAppDelegate {
     return Application(
       isProduction: Configurations.isProduction,
       providers: const [],
-      initialRoute: 'home',
+      initialRoute: SpashScreen.routeName,
       myRouteObserver: MyRouteObserver(),
     );
   }

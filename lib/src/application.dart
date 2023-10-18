@@ -27,15 +27,11 @@ class Application extends StatefulWidget {
 }
 
 class _ApplicationState extends State<Application> with WidgetsBindingObserver {
-  Widget _buildMaterialApp({
-    ThemeData? light,
-    ThemeData? dark,
-  }) {
+  Widget _buildMaterialApp() {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       navigatorKey: AppCoordinator.root,
-      theme: light,
-      darkTheme: dark,
+      theme: ThemeData(brightness: Brightness.dark),
       navigatorObservers: [
         MyNavigatorObserver(),
         widget.myRouteObserver,
