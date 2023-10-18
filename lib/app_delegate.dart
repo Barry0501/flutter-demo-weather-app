@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
-import 'package:weather_app/src/application.dart';
 
+import 'src/application.dart';
 import 'src/core/configurations/configurations.dart';
 import 'src/core/coordinator/app_coordinator.dart';
 import 'src/core/services/logger_service.dart';
@@ -29,8 +29,8 @@ class AppDelegate extends IAppDelegate {
 
     return Application(
       isProduction: Configurations.isProduction,
-      providers: [],
-      initialRoute: '/home',
+      providers: const [],
+      initialRoute: 'home',
       myRouteObserver: MyRouteObserver(),
     );
   }

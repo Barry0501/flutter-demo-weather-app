@@ -1,20 +1,9 @@
-import 'package:flutter/material.dart';
+import 'app_delegate.dart';
+import 'src/core/configurations/env_prod.dart';
 
-void main() {
-  runApp(const MainApp());
-}
+void main(List<String> args) {
+  environmentProd.addAll({'isStudio': false});
+  // environmentProd.addAll({'isStudio': false});
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
-  }
+  AppDelegate().run(environmentProd);
 }

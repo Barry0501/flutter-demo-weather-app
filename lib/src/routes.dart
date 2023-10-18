@@ -1,8 +1,12 @@
 import 'package:injectable/injectable.dart';
-import 'package:weather_app/src/router/route_module.dart';
+
+import 'presentation/home/home_routes.dart';
+import 'router/route_module.dart';
 
 @singleton
 class Routes extends RouteModuleBuilder {
   @override
-  List<RouteModule> get routes => [];
+  List<RouteModule> get routes => [
+        HomeRoutes(),
+      ];
 }

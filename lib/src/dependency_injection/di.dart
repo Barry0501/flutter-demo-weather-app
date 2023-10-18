@@ -1,9 +1,15 @@
 // Copyright 2021 Fighttech.vn, Ltd. All rights reserved.
 
+import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 
 import './di.config.dart';
-import 'mobilehub_core_micro.dart';
+
+GetIt injector = GetIt.instance;
+
+abstract class InjectorGet {
+  T get<T extends Object>() => injector.get<T>();
+}
 
 @InjectableInit(
   initializerName: 'init', // default

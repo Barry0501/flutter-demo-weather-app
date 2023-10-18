@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_app/src/routes.dart';
 
 import 'core/coordinator/app_coordinator.dart';
-import 'dependency_injection/mobilehub_core_micro.dart';
+import 'dependency_injection/di.dart';
 import 'router/route_observer.dart';
+import 'routes.dart';
 
 class Application extends StatefulWidget {
   final String initialRoute;
@@ -47,11 +47,9 @@ class _ApplicationState extends State<Application> with WidgetsBindingObserver {
   }
 
   Widget _materialBuilder(BuildContext context, Widget? child) {
-    return Material(
-      child: MediaQuery(
-        data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-        child: child!,
-      ),
+    return MediaQuery(
+      data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+      child: child!,
     );
   }
 
@@ -70,6 +68,7 @@ class _ApplicationState extends State<Application> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
+    return _buildMaterialApp();
     return MultiBlocProvider(
       providers: widget.providers,
       child: _buildMaterialApp(),

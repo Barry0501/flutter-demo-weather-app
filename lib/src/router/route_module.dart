@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
-import '../dependency_injection/mobilehub_core_micro.dart';
+import '../dependency_injection/di.dart';
 
 abstract class RouteModule extends InjectorGet {
   GetIt get injector => GetIt.instance;
