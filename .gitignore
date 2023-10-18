@@ -1,0 +1,99 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+/pubspec.lock
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+
+# Web related
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+modules/storybook/macos/Flutter/GeneratedPluginRegistrant.swift
+modules/storybook/windows/flutter/generated_plugin_registrant.cc
+modules/storybook/macos/Flutter/GeneratedPluginRegistrant.swift
+modules/storybook/windows/flutter/generated_plugins.cmake
+modules/storybook/.firebase/
+.app_dist/backup_app_dist
+.app_dist
+.app_dist/
+release/
+linux/flutter/generated_plugin_registrant.cc
+linux/flutter/generated_plugin_registrant.h
+linux/flutter/generated_plugins.cmake
+macos/Flutter/GeneratedPluginRegistrant.swift
+macos/Flutter/GeneratedPluginRegistrant.swift
+windows/flutter/generated_plugin_registrant.cc
+windows/flutter/generated_plugin_registrant.h
+windows/flutter/generated_plugins.cmake
+modules/storybook/windows/flutter/generated_plugin_registrant.h
+modules/app_core/coverage/
+screenshots/
+modules/components/coverage/
+modules/plugins/easy_audio/example/linux/flutter/generated_plugin_registrant.cc
+modules/plugins/easy_audio/example/linux/flutter/generated_plugin_registrant.h
+modules/plugins/easy_audio/example/linux/flutter/generated_plugins.cmake
+modules/plugins/easy_audio/example/macos/Flutter/GeneratedPluginRegistrant.swift
+modules/plugins/easy_audio/example/windows/flutter/generated_plugin_registrant.cc
+modules/plugins/easy_audio/example/windows/flutter/generated_plugin_registrant.h
+modules/plugins/easy_audio/example/windows/flutter/generated_plugins.cmake
+modules/storybook/windows/flutter/generated_plugin_registrant.h
+build-apk.sh
+releaseNote-autogen.txt
+build-ipa.sh
+modules/ui/coverage
+resourcesraw/
+setup-build-ios.sh
+resources_raw
+ios/ExportOptions.plist
+GeneratedPluginRegistrant.m
+GeneratedPluginRegistrant.h
+Generated.xcconfig
+flutter_export_environment.sh
+GeneratedPluginRegistrant.java
+local.properties
+storybook/linux/flutter/generated_plugin_registrant.cc
+storybook/linux/flutter/generated_plugins.cmake
+storybook/macos/Flutter/GeneratedPluginRegistrant.swift
+storybook/windows/flutter/generated_plugin_registrant.cc
+storybook/windows/flutter/generated_plugins.cmake
+/.fvm/flutter_sdk/
+.fvm
+Podfile.lock
+modules/packages/storybook/macos/Flutter/GeneratedPluginRegistrant.swift
