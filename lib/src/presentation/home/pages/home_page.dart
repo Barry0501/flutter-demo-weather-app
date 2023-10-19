@@ -8,7 +8,7 @@ import '../bloc/home_bloc.dart';
 import '../widgets/search_textfield_widget.dart';
 
 class HomePage extends StatefulWidget {
-  static const String routeName = 'home';
+  static const String routeName = '/home';
 
   const HomePage({super.key});
 
@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
 
-    homeBloc.add(FetchWeatherEvent(location: 'paris'));
+    // homeBloc.add(FetchWeatherEvent(location: 'paris'));
   }
 
   @override
@@ -45,10 +45,11 @@ class _HomePageState extends State<HomePage> {
           children: [
             Image.asset(UIData.welcome),
             Padding(
-              padding: const EdgeInsets.only(top: 16),
+              padding: const EdgeInsets.fromLTRB(20, 16, 20, 0),
               child: Text(
                 'Search and add cities to follow here',
                 style: context.textTheme.titleLarge,
+                textAlign: TextAlign.center,
               ),
             ),
           ],

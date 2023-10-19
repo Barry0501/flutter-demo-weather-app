@@ -8,7 +8,7 @@ import '../models/response/api_response.dart';
 part 'weather_api.g.dart';
 
 class WeatherApiConstant {
-  static const String fetchWeatherFromLocation = 'forecast.json';
+  static const String fetchWeatherBySearch = 'forecast.json';
 }
 
 @RestApi()
@@ -17,8 +17,9 @@ abstract class WeatherApi {
   @factoryMethod
   factory WeatherApi(Dio dio) = _WeatherApi;
 
-  @POST(WeatherApiConstant.fetchWeatherFromLocation)
-  Future<ApiResponse<Weather>> fetchWeatherFromLocation({
+  @POST(WeatherApiConstant.fetchWeatherBySearch)
+  Future<ApiResponse<Weather>> fetchWeatherBySearch({
     @Query('q') required String search,
+    @Query('days') required int days,
   });
 }

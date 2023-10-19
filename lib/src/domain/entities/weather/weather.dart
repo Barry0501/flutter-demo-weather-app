@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../forecast/forecast.dart';
 import 'current_weather.dart';
 import 'location.dart';
 
@@ -12,6 +13,7 @@ class Weather with _$Weather {
   const factory Weather({
     Location? location,
     @JsonKey(name: 'current') CurrentWeather? currentWeather,
+    Forecast? forecast,
   }) = _Weather;
 
   factory Weather.fromJson(Map<String, dynamic> json) =>

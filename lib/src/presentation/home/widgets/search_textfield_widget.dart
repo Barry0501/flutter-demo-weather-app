@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/extensions/build_context_ext.dart';
 import '../../../utils/app_colors.dart';
+import '../home_coordinator.dart';
 
 class SearchTextFieldWidget extends StatefulWidget {
   const SearchTextFieldWidget({super.key});
@@ -19,31 +20,26 @@ class _SearchTextFieldWidgetState extends State<SearchTextFieldWidget> {
     super.dispose();
   }
 
+  void _onPressedBtnDone() {
+    FocusScope.of(context).unfocus();
+    final textSearch = _searchCtrl.text.trim();
+    if (textSearch.isNotEmpty) {
+      context.startWeatherDetailPage(textSearch);
+      _searchCtrl.clear();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
       child: TextField(
         controller: _searchCtrl,
-        onEditingComplete: () {
-          FocusScope.of(context).unfocus();
-          // if (searchController.text.isNotEmpty) {
-          //   Navigator.pushNamed(
-          //     context,
-          //     Routes.detailsView,
-          //     arguments: ScreenArguments(cityName: searchController.text),
-          //   );
-          //   searchController.clear();
-          //   FocusScope.of(context).unfocus();
-          // } else {
-          //   FocusScope.of(context).unfocus();
-          // }
-        },
+        onEditingComplete: _onPressedBtnDone,
         textInputAction: TextInputAction.done,
         decoration: InputDecoration(
           hintMaxLines: 1,
           hintText: 'Search for a city or zip code...',
-          // suffixIconColor: AppColors.grey,
           filled: true,
           isDense: true,
           border: OutlineInputBorder(
@@ -51,9 +47,7 @@ class _SearchTextFieldWidgetState extends State<SearchTextFieldWidget> {
             borderSide: BorderSide.none,
           ),
           suffixIcon: GestureDetector(
-            onTap: () {
-              print('sdsd');
-            },
+            onTap: _onPressedBtnDone,
             child: Container(
               margin: const EdgeInsets.all(6),
               padding: const EdgeInsets.all(6),

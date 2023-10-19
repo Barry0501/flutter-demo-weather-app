@@ -11,8 +11,8 @@ class WeatherRepositoryImpl implements WeatherRepository {
   WeatherRepositoryImpl(this._weatherApi);
 
   @override
-  Future<Weather> fetchWeatherFromLocation(String search) async {
-    final res = await _weatherApi.fetchWeatherFromLocation(search: search);
+  Future<Weather> fetchWeatherBySearch(String search) async {
+    final res = await _weatherApi.fetchWeatherBySearch(search: search, days: 7);
     return res.data;
   }
 }

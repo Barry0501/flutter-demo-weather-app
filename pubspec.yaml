@@ -24,6 +24,9 @@ dependencies:
 
   shimmer: ^3.0.0
   shared_preferences: ^2.0.13
+  lottie: ^2.6.0
+  intl: ^0.18.0
+  smooth_page_indicator: ^1.1.0
 
 dev_dependencies:
   flutter_test:

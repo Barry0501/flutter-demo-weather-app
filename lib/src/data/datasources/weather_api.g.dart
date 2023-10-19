@@ -19,10 +19,15 @@ class _WeatherApi implements WeatherApi {
   String? baseUrl;
 
   @override
-  Future<ApiResponse<Weather>> fetchWeatherFromLocation(
-      {required String search}) async {
+  Future<ApiResponse<Weather>> fetchWeatherBySearch({
+    required String search,
+    required int days,
+  }) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{r'q': search};
+    final queryParameters = <String, dynamic>{
+      r'q': search,
+      r'days': days,
+    };
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio.fetch<Map<String, dynamic>>(

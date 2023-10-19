@@ -9,7 +9,7 @@ class WeatherUsecase {
 
   WeatherUsecase(this._weatherRepository);
 
-  Future<Weather> fetchWeatherFromLocation(String search) async {
-    return _weatherRepository.fetchWeatherFromLocation(search);
+  Future<Weather> fetchWeatherBySearch(String search) async {
+    return _weatherRepository.fetchWeatherBySearch(search);
   }
 }
