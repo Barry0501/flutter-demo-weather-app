@@ -7,7 +7,7 @@ class SlideTransitionAnimation extends StatefulWidget {
     required this.duration,
     required this.begin,
     required this.end,
-     this.curve,
+    this.curve,
   }) : super(key: key);
 
   final Widget child;
@@ -38,7 +38,7 @@ class _SlideTransitionAnimationState extends State<SlideTransitionAnimation>
     ).animate(
       CurvedAnimation(
         parent: _controller,
-        curve: widget.curve??Curves.elasticIn,
+        curve: widget.curve ?? Curves.elasticIn,
       ),
     );
     _controller.forward();

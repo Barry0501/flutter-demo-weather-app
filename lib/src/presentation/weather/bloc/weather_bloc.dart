@@ -12,7 +12,7 @@ part 'weather_state.dart';
 @injectable
 class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
   final WeatherUsecase _weatherUsecase;
-  
+
   WeatherBloc(this._weatherUsecase) : super(WeatherInitial()) {
     on<FetchWeatherBySearchEvent>(_mapFetchWeatherBySearchEvent);
   }
@@ -23,7 +23,6 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
       final res = await _weatherUsecase.fetchWeatherBySearch(event.textSearch);
       emit(FetchWeatherDetailSuccess(res));
     } catch (e) {
-      
       emit(FetchWeatherDetailFail(e.toString()));
     }
   }

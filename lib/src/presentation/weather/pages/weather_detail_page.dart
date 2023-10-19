@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../home/bloc/home_bloc.dart';
 import '../../shared/widgets/shimmer/shimmer_details_view_widget.dart';
 import '../bloc/weather_bloc.dart';
 import '../widgets/weather_detail_error_widget.dart';
@@ -19,6 +20,13 @@ class WeatherDetailPage extends StatefulWidget {
 
 class _WeatherDetailPageState extends State<WeatherDetailPage> {
   WeatherBloc get weatherloc => context.read();
+  HomeBloc get homeBloc => context.read();
+
+  void _onListenerBloc(BuildContext context, WeatherState state) {
+    if (state is FetchWeatherDetailSuccess) {
+      homeBloc.add(AddSearchHistoryResultEvent(state.weather));
+    }
+  }
 
   @override
   void initState() {
@@ -30,7 +38,8 @@ class _WeatherDetailPageState extends State<WeatherDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocBuilder<WeatherBloc, WeatherState>(
+      body: BlocConsumer<WeatherBloc, WeatherState>(
+        listener: _onListenerBloc,
         builder: (context, state) {
           if (state is FetchWeatherDetailSuccess) {
             return WeatherDetailViewBodyWidget(weather: state.weather);

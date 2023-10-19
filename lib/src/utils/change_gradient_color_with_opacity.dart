@@ -1,11 +1,10 @@
-
 import 'package:flutter/material.dart';
 
 import 'app_colors.dart';
 
 List<Color> changeGradientColorWithOpacity({required String weatherName}) {
   switch (weatherName) {
-  // Rain
+    // Rain
     case 'Patchy light rain':
     case 'Light rain':
     case 'Moderate rain at times':
@@ -21,7 +20,7 @@ List<Color> changeGradientColorWithOpacity({required String weatherName}) {
     case 'Patchy light rain with thunder':
     case 'Moderate or heavy rain with thunder':
       return AppColors.blueGreyGradientWithOpacity;
-  //Cloudy
+    //Cloudy
     case 'Partly cloudy':
     case 'Cloudy':
     case 'Overcast':
@@ -29,7 +28,7 @@ List<Color> changeGradientColorWithOpacity({required String weatherName}) {
     case 'Fog':
     case 'Thundery outbreaks possible':
       return AppColors.purpleGradientWithOpacity;
-  //Freezing - Snow
+    //Freezing - Snow
     case 'Light freezing rain':
     case 'Moderate or heavy freezing rain':
     case 'Light sleet':
@@ -58,8 +57,8 @@ List<Color> changeGradientColorWithOpacity({required String weatherName}) {
     case 'Patchy light snow with thunder':
     case 'Moderate or heavy snow with thunder':
       return AppColors.blueGradientWithOpacity;
-    default:  return AppColors.orangeGradientWithOpacity;
+    default:
+      return AppColors.orangeGradientWithOpacity;
   }
   // clear - Sunny
-
 }

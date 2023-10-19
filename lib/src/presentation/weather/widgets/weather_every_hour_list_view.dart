@@ -38,8 +38,7 @@ class WeatherEveryHourListView extends StatelessWidget {
         child: ListView.separated(
           physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
-          itemCount:
-              weather.forecast!.forecastday![index].forecastHour!.length,
+          itemCount: weather.forecast!.forecastday![index].forecastHour!.length,
           itemBuilder: (context, indexForList) =>
               WeatherEveryHourListViewItemWidget(
             hour: weather

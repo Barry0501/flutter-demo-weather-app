@@ -64,7 +64,6 @@ class _ApplicationState extends State<Application> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
-    return _buildMaterialApp();
     return MultiBlocProvider(
       providers: widget.providers,
       child: _buildMaterialApp(),

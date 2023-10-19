@@ -37,8 +37,7 @@ class SecondaryWeatherDetailSectionWidget extends StatelessWidget {
               title: 'UV INDEX',
               value: index == 0
                   ? weather.currentWeather!.uv!.toInt().toString()
-                  : weather.forecast!.forecastday![index].day!.uv
-                      .toString(),
+                  : weather.forecast!.forecastday![index].day!.uv.toString(),
               icon: Icons.sunny,
               iconColor: AppColors.yellow,
             ),

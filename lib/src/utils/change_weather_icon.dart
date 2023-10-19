@@ -1,4 +1,3 @@
-
 String changeWeatherIcon({required String weatherName}) {
   switch (weatherName) {
     ///rain

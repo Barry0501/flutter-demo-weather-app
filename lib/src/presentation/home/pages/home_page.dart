@@ -5,6 +5,7 @@ import '../../../core/extensions/build_context_ext.dart';
 import '../../../utils/uidata.dart';
 import '../../shared/widgets/auto_hide_keyboard.dart';
 import '../bloc/home_bloc.dart';
+import '../widgets/history_search_weather_item_widget.dart';
 import '../widgets/search_textfield_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -20,13 +21,6 @@ class _HomePageState extends State<HomePage> {
   HomeBloc get homeBloc => context.read();
 
   @override
-  void initState() {
-    super.initState();
-
-    // homeBloc.add(FetchWeatherEvent(location: 'paris'));
-  }
-
-  @override
   Widget build(BuildContext context) {
     return AutoHideKeyboard(
       child: Scaffold(
@@ -39,21 +33,37 @@ class _HomePageState extends State<HomePage> {
             child: SearchTextFieldWidget(),
           ),
         ),
-        body: Center(
-            child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(UIData.welcome),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 16, 20, 0),
-              child: Text(
-                'Search and add cities to follow here',
-                style: context.textTheme.titleLarge,
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ],
-        )),
+        body: BlocBuilder<HomeBloc, HomeState>(
+          builder: (context, state) {
+            if (state is AddSearchHistorySuccess) {
+              final lists = state.weathers;
+              return ListView.builder(
+                padding: const EdgeInsets.fromLTRB(20, 0, 20, 60),
+                itemBuilder: (context, index) {
+                  return HistorySearchWeatherItemWidget(
+                    weather: lists[index],
+                  );
+                },
+                itemCount: lists.length,
+              );
+            }
+            return Center(
+                child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(UIData.welcome),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 16, 20, 0),
+                  child: Text(
+                    'Search history will show here\n(only location is founded)',
+                    style: context.textTheme.titleLarge,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ],
+            ));
+          },
+        ),
       ),
     );
   }

@@ -11,7 +11,7 @@ class Day with _$Day {
   const factory Day({
     num? uv,
     num? humidity,
-    @JsonKey(name: 'wind_mph')  num? windMph,
+    @JsonKey(name: 'wind_mph') num? windMph,
     @JsonKey(name: 'maxwind_mph') num? maxwindMph,
     num? avghumidity,
     @JsonKey(name: 'avgtemp_c') double? avgtempC,

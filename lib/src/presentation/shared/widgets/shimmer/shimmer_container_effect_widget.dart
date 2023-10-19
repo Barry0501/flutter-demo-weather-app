@@ -21,7 +21,6 @@ class ShimmerContainerEffectWidget extends StatelessWidget {
   final Color? baseColor;
   final Color? highlightColor;
 
-
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
