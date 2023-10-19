@@ -7,11 +7,13 @@ class AppBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      centerTitle: true,
-      title: title,
-      backgroundColor: Colors.transparent,
-      elevation: 0,
+    return SafeArea(
+      child: AppBar(
+        centerTitle: true,
+        title: title,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
     );
   }
 }

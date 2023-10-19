@@ -18,8 +18,14 @@ class ShimmerDetailsViewWidget extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       child: const Stack(
         children: [
-          AppBarWidget(
-            title: ShimmerContainerEffectWidget(width: 130, height: 15),
+          SafeArea(
+            child: AppBarWidget(
+              title: ShimmerContainerEffectWidget(
+                width: 130,
+                height: 15,
+                margin: EdgeInsets.only(top: 10),
+              ),
+            ),
           ),
           ShimmerDetailsViewBodyWidget(),
         ],

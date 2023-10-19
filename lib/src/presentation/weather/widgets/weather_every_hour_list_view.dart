@@ -17,6 +17,7 @@ class WeatherEveryHourListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final forecastHour = weather.forecast!.forecastday![index].forecastHour;
     return SlideTransitionAnimation(
       duration: const Duration(milliseconds: 900),
       begin: const Offset(0.6, 0),
@@ -38,11 +39,10 @@ class WeatherEveryHourListView extends StatelessWidget {
         child: ListView.separated(
           physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
-          itemCount: weather.forecast!.forecastday![index].forecastHour!.length,
+          itemCount: forecastHour?.length ?? 0,
           itemBuilder: (context, indexForList) =>
               WeatherEveryHourListViewItemWidget(
-            hour: weather
-                .forecast!.forecastday![index].forecastHour![indexForList],
+            hour: forecastHour![indexForList],
           ),
           separatorBuilder: (context, index) => const SizedBox(
             width: 13,

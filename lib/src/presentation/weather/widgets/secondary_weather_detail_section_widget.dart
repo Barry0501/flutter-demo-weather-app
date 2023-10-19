@@ -18,6 +18,8 @@ class SecondaryWeatherDetailSectionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final currentWeather = weather.currentWeather;
+    final day = weather.forecast!.forecastday![index].day!;
     return SlideTransitionAnimation(
       duration: const Duration(milliseconds: 700),
       begin: const Offset(0.5, 0),
@@ -36,8 +38,8 @@ class SecondaryWeatherDetailSectionWidget extends StatelessWidget {
             SecondaryWeatherDetailsSectionItemWidget(
               title: 'UV INDEX',
               value: index == 0
-                  ? weather.currentWeather!.uv!.toInt().toString()
-                  : weather.forecast!.forecastday![index].day!.uv.toString(),
+                  ? currentWeather!.uv!.toInt().toString()
+                  : day.uv.toString(),
               icon: Icons.sunny,
               iconColor: AppColors.yellow,
             ),
@@ -45,8 +47,8 @@ class SecondaryWeatherDetailSectionWidget extends StatelessWidget {
             SecondaryWeatherDetailsSectionItemWidget(
               title: 'WIND',
               value: index == 0
-                  ? '${weather.currentWeather!.windMph} m/h'
-                  : '${weather.forecast!.forecastday![index].day!.maxwindMph} m/h',
+                  ? '${currentWeather?.windMph} m/h'
+                  : '${day.maxwindMph} m/h',
               icon: Icons.wind_power,
               iconColor: Colors.indigoAccent,
             ),
@@ -54,8 +56,8 @@ class SecondaryWeatherDetailSectionWidget extends StatelessWidget {
             SecondaryWeatherDetailsSectionItemWidget(
               title: 'HUMIDITY',
               value: index == 0
-                  ? '${weather.currentWeather!.humidity!.toInt()}%'
-                  : '${weather.forecast!.forecastday![index].day!.avghumidity}',
+                  ? '${currentWeather?.humidity?.toInt()}%'
+                  : '${day.avghumidity}',
               icon: Icons.water_drop,
               iconColor: AppColors.blueAccent,
             ),

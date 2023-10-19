@@ -20,7 +20,8 @@ Location _$LocationFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Location {
-  int? get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'tz_id')
+  String? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get region => throw _privateConstructorUsedError;
   String? get country => throw _privateConstructorUsedError;
@@ -40,7 +41,7 @@ abstract class $LocationCopyWith<$Res> {
       _$LocationCopyWithImpl<$Res, Location>;
   @useResult
   $Res call(
-      {int? id,
+      {@JsonKey(name: 'tz_id') String? id,
       String? name,
       String? region,
       String? country,
@@ -74,7 +75,7 @@ class _$LocationCopyWithImpl<$Res, $Val extends Location>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -112,7 +113,7 @@ abstract class _$$LocationImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int? id,
+      {@JsonKey(name: 'tz_id') String? id,
       String? name,
       String? region,
       String? country,
@@ -144,7 +145,7 @@ class __$$LocationImplCopyWithImpl<$Res>
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -177,7 +178,7 @@ class __$$LocationImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$LocationImpl implements _Location {
   const _$LocationImpl(
-      {this.id,
+      {@JsonKey(name: 'tz_id') this.id,
       this.name,
       this.region,
       this.country,
@@ -189,7 +190,8 @@ class _$LocationImpl implements _Location {
       _$$LocationImplFromJson(json);
 
   @override
-  final int? id;
+  @JsonKey(name: 'tz_id')
+  final String? id;
   @override
   final String? name;
   @override
@@ -243,7 +245,7 @@ class _$LocationImpl implements _Location {
 
 abstract class _Location implements Location {
   const factory _Location(
-      {final int? id,
+      {@JsonKey(name: 'tz_id') final String? id,
       final String? name,
       final String? region,
       final String? country,
@@ -255,7 +257,8 @@ abstract class _Location implements Location {
       _$LocationImpl.fromJson;
 
   @override
-  int? get id;
+  @JsonKey(name: 'tz_id')
+  String? get id;
   @override
   String? get name;
   @override

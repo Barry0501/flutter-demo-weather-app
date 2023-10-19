@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 
 import '../../../core/animations/fade_transition_animation.dart';
 import '../../../core/animations/slide_transition_animation.dart';
+import '../../../domain/entities/weather/current_weather.dart';
 import '../../../domain/entities/weather/weather.dart';
 import '../../../utils/change_weather_icon.dart';
 import '../../../utils/uidata.dart';
@@ -19,6 +20,8 @@ class BasicWeatherDetailSectionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final currentWeather = weather.currentWeather;
+    final day = weather.forecast!.forecastday![index].day!;
     return Expanded(
       flex: 2,
       child: Padding(
@@ -43,9 +46,8 @@ class BasicWeatherDetailSectionWidget extends StatelessWidget {
               child: Image.asset(
                 '${UIData.imageDir}/${changeWeatherIcon(
                   weatherName: index == 0
-                      ? weather.currentWeather!.weatherCondition!.text!
-                      : weather.forecast!.forecastday![index].day!
-                          .weatherCondition!.text!,
+                      ? currentWeather!.weatherConditionName
+                      : day.weatherCondition!.text!,
                 )}.png',
                 width: 260,
                 height: 220,
@@ -55,8 +57,8 @@ class BasicWeatherDetailSectionWidget extends StatelessWidget {
               duration: const Duration(milliseconds: 1300),
               child: Text(
                 index == 0
-                    ? '${weather.currentWeather!.tempC!.toInt()}°'
-                    : '${weather.forecast!.forecastday![index].day!.avgtempC!.toInt()}°',
+                    ? '${currentWeather?.weatherTempC}°'
+                    : '${day.avgtempC!.toInt()}°',
                 // style: AppStyles.textStyle40,
               ),
             ),
@@ -67,9 +69,8 @@ class BasicWeatherDetailSectionWidget extends StatelessWidget {
               curve: Curves.easeIn,
               child: Text(
                 index == 0
-                    ? weather.currentWeather!.weatherCondition!.text!
-                    : weather.forecast!.forecastday![index].day!
-                        .weatherCondition!.text!,
+                    ? currentWeather!.weatherConditionName
+                    : day.weatherCondition!.text!,
                 textAlign: TextAlign.center,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,

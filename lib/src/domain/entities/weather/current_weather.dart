@@ -22,3 +22,13 @@ class CurrentWeather with _$CurrentWeather {
   factory CurrentWeather.fromJson(Map<String, dynamic> json) =>
       _$CurrentWeatherFromJson(json);
 }
+
+extension CurrentWeatherExt on CurrentWeather {
+  String get weatherConditionName {
+    return weatherCondition?.text ?? '';
+  }
+
+  int? get weatherTempC {
+    return tempC?.toInt();
+  }
+}
