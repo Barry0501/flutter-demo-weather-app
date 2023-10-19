@@ -21,7 +21,7 @@ class _SpashScreenState extends State<SpashScreen> {
   }
 
   void navigateToOnBoardingViewOrHomeView() {
-    Future.delayed(const Duration(seconds: 1)).then((value) {
+    Future.delayed(const Duration(seconds: 3)).then((value) {
       return Navigator.pushReplacementNamed(context, HomePage.routeName);
     });
   }
