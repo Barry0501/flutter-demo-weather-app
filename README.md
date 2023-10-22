@@ -3,7 +3,7 @@
 This is a boilerplate project mobile app built with Clean Architecture and MVVM.
 The source code structure is built with the criteria that it can be upgraded to Micro Front-End architecture if the scope of the project expands.
 
-![Cover](https://github.com/Barry0501/flutter-demo-weather-app/assets/34902237/5406d510-89a8-4132-966c-c6361ee241d4)
+![alt text](./screenshot.png "Screenshot")
 
 
 This repository contains all source code flutter for the project.
